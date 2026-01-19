@@ -8,6 +8,7 @@ class point
 {
     public:
 
+    point(); 
     point(double x, double y);
     double getX();
     double getY();

@@ -9,6 +9,12 @@
         pointY = y;
     }
 
+    point::point()
+    {
+        pointX = 0; 
+        pointY = 0; 
+    }
+
     double point::getX()
     {
         return pointX;
