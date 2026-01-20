@@ -37,3 +37,13 @@
     
         return "X: "  + X + ", Y: " +  Y;
     }
+
+    void point::setX(double newX)
+    {
+        pointX = newX; 
+    }
+    
+    void point::setY(double newY)
+    {
+        pointY = newY; 
+    }

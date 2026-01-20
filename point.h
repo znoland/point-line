@@ -13,6 +13,8 @@ class point
     double getX();
     double getY();
     string getPoint();
+    void setX(double newX); 
+    void setY(double newY); 
     
     private:
     double pointX;
