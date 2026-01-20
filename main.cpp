@@ -22,23 +22,21 @@ TEST_CASE("Test Template")
 	*/
 	SECTION("Line Tests")
 	{
-		point p1(1, 1);
-		point p2(1, 5);
+		point p1(4.2, 10.7);
+		point p2(8.3, 2.1);
 		line l1(p1, p2);
-		point p3(2, 1);
+		point p3(5.2, 20.5);
 		point midPoint(l1.getMidpoint());
 		l1.pointOnLine(p3);
 
-		cout << l1.toString() << endl; 
-		REQUIRE(l1.getLength() == 4);
-		REQUIRE(l1.getSlope() == 0);
-		REQUIRE(l1.pointOnLine(p3) == true);
-		REQUIRE(midPoint.getPoint() == "X: 3.0, Y: 1.0");
-		REQUIRE(l1.toString() == "Line- Point 1: [X: 1.0, Y: 1.0], Point 2: [X: 5.0, Y: 1.0], Length: 4.0");
+		REQUIRE(fabs(l1.getLength()-9.53) < .01);
+		REQUIRE(fabs(l1.getSlope()+2.1) < .01);
+		REQUIRE(l1.pointOnLine(p3) == false);
+		REQUIRE(midPoint.getPoint() == "X: 6.2, Y: 6.4");
+		REQUIRE(l1.toString() == "Line- Point 1: [X: 4.2, Y: 10.7], Point 2: [X: 8.3, Y: 2.1], Length: 9.5");
 
-		l1.extendLine(2);
-		cout << l1.toString() << endl; 
-		REQUIRE(l1.getLength() == 8);
+		l1.extendLine(2); 
+		REQUIRE(fabs(l1.getLength()-13.53) < .01);
 	}
 	
 }
